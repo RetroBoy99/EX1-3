@@ -1,0 +1,17 @@
+<p>exercise-two works!</p>
+<input type="number" placeholder="Age" min="1" #NewAge > <br>
+
+<mat-form-field>
+    <mat-label>Planets</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let Planet of Planets" [value]="Planet.value">
+        {{Planet.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> <br>
+
+  <button mat-raised-button color="primary" (click)="PlanetChoice(NewAge, selected)">submit</button> <br>
+
+  <div *ngIf="UserAge && selected">
+     <p [ngStyle]="{'color': 'purple'}"> Your age on the Selected Planet {{UserAge}}</p> 
+    </div>
